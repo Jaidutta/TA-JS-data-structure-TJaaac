@@ -55,7 +55,7 @@ for(let i = 0; i <colors.length; i++) {
 // 17. Copying from that loop you just wrote, modify it to print every color's value and every color's index in this format: 3, purple or 0, blue etc.
 for(let i = 0; i <colors.length; i++) {
   
-  console.log(i, ', ', colors[i])
+  console.log(`${i}: ${colors[i]}`)
 }
 // 18. Write a for..of loop to iterate through every element in the array and print each element to the console.
 for(let color of colors) {
