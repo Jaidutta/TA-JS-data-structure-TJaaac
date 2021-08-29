@@ -27,7 +27,7 @@ colors[colors.length - 1] = "ultraviolet"
 colors.length
 
 // 10. Create a new variable called fourthColor and set it equal to the fourth color in the list.
-const fourthColor = colors[3].length
+const fourthColor = colors[3]
 console.log(fourthColor);
 // 11. Add another color to the end of the list.
 colors.push("magenta")
