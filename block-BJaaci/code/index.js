@@ -51,13 +51,13 @@ for(movie of movies[0].actors) {
 console.log(movies[0].actors[0]);
 
 // 7. Log the name of the last actor of the first movie
-console.log(movies[0].actors[2]);
+console.log(movies[0].actors[movies[0].actors.length - 1]);
 
 // 8. Log the name of the second actor (index 1) of the first movie
 console.log(movies[0].actors[1]);
 
 // 9. Log the name of the second actor (index 1) of the second movie
-console.log(movies[1].actors[2]);
+console.log(movies[1].actors[1]);
 
 // 10. Log the name of the last actor of the thrid movie
 console.log(movies[2].actors[movies[2].actors.length -1]);
@@ -85,7 +85,7 @@ console.log(movies[1].genres[0]);
 console.log(movies[0].genres[movies[0].genres.length - 1]);
 
 // 17. Log the first genres of the second movie (using the length property of array)
-console.log(movies[0].genres[movies[0].genres.length - 1]);
+console.log(movies[1].genres[0]);
 
 // 18. Log all the genres of the first movie one by one
 for(genre of movies[0].genres) {
@@ -117,29 +117,31 @@ console.log(movies[0].title === 'Hannah');
 
 // 25. Log the number of actors in all three movies one by one
 for(movie of movies) {
-  console.log(movie.actors);
+  for(actor of movie.actors) {
+    console.log(actor, 'actors');
+  }
 }
 // 26. Log the number of genres in all three movies one by one
 for(movie of movies) {
-  console.log(movie.genres);
+  console.log(movie.genres.length, 'mumber of genres');
 }
 
 // 27. Log the name of all the movies with more than 1 genre
 for(movie of movies) {
   if(movie.genres.length > 1) {
-    console.log(movie.genres);
+    console.log(movie.title, 'movie with more than 1 genre');
   }
 }
 // 28. Log the name of all the movies with more than 1 actors
 for(movie of movies) {
   if(movie.actors.length > 1) {
-    console.log(movie.actors);
+    console.log(movie.title, 'movie with more than 1 actor');
   }
 }
 // 29. Log the name of all the movies with exactly 3 actors
 for(movie of movies) {
   if(movie.actors.length === 3) {
-    console.log(movie);
+    console.log(movie, 'movie in which there are 3 actors');
   }
 }
 
@@ -149,3 +151,22 @@ for(movie of movies) {
     console.log(movie);
   }
 }
+
+// 31. Store the title of all the movies in an array named 'allTitles'
+const allTitles = [];
+for(let movie of movies) { allTitles.push(movie.title)}
+console.log(allTitles);
+
+// 32. Store the genre of all the movies in an array named 'allGenres'
+const allGenres = []
+for(let movie of movies) { allGenres.push(movie.genres)}
+console.log(allGenres);
+
+// 33. Store the actors of all the movies in an array named 'allActors'
+const allActors = []
+for(let movie of movies) { allActors.push(movie.actors)}
+console.log(allActors);
+
+// 34. log the length of 'allTitles', 'allGenres', 'allActors'
+
+console.log(allTitles.length, allGenres.length, allActors.length);
