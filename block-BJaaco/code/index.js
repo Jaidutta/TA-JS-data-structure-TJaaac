@@ -3,15 +3,29 @@ let numbers = [6, 8, 10, 12, 43, 56, 98];
 let userIds = [1230, 234, 1278, 984, 763, 900];
 
 // 1. Add all the values of numbers and userIds array into the new newly created array named `collection`
+const collection = numbers.concat(userIds)
 
 // 2. Add all the even numbers from both arrays numbers and userIds into a newly created array named `evenCollection`
+const evenCollection = []
+for(element of collection) {
+  if(element % 2 === 0) {
+    evenCollection.push(element)
+  }
+}
+console.log(evenCollection);
 
 // 3. Add all the odd numbers from both arrays numbers and userIds into a newly created array named `oddCollection`
-
+const oddCollection = []
+for(element of collection) {
+  if(element % 2 !== 0) {
+    oddCollection.push(element)
+  }
+}
+console.log(oddCollection);
 /*
   @param means parameter
 
- 4. Write a function named times which accets two parameter and return an array. 
+ 4. Write a function named times which accepts two parameter and return an array. 
 
   @param times (number)
   @param character (string)
@@ -24,8 +38,13 @@ let userIds = [1230, 234, 1278, 984, 763, 900];
     times(5); // ['test', 'test', 'test', 'test', 'test']
 */
 
-function times() {
+function times(number, character = 'test') {
   // Your code
+  const arr = []
+  for(i = 0; i < number; i++) {
+    arr.push(character)
+  }
+  return arr
 }
 
 // Uncomment the code below and test the output
@@ -48,8 +67,14 @@ function times() {
     revert(['Ryan', 'John', 'Bran']); //['Bran', 'John', 'Ryan']
 */
 
-function revert() {
+function revert(arr) {
   // your code
+  const newArr = []
+  for(let i = arr.length - 1; i >= 0; i--) {
+    newArr.push(arr[i])
+    console.log(newArr)
+  }
+  return newArr
 }
 
 // Uncomment the code below and test the output
@@ -70,8 +95,15 @@ function revert() {
     clear(['Ryan', null, 0,  'John', 'Bran']); //['Bran', 'John', 'Ryan']
 */
 
-function clear() {
-  // your code
+function clear(arr) {
+  // your
+  const newArr = []
+  for(let i = arr.length -1; i >= 0; i--) {
+    if(arr[i]) {
+      newArr.push(arr[i])
+    }
+  }
+  return newArr
 }
 
 // Uncomment the code below and test the output
@@ -93,8 +125,13 @@ function clear() {
     arrayToObj(['Ryan', 'John']); // {0: 'Ryan', 1: 'John'}
 */
 
-function arrayToObj() {
+function arrayToObj(arr) {
   // your code
+  let newObj = {}
+  for(let i = 0; i < arr.length; i++) {
+    newObj[i] = arr[i]
+  }
+  return newObj
 }
 
 // Uncomment the code below and test the output
