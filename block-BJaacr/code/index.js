@@ -19,41 +19,109 @@ Hint: (Structure of got variable)
 */
 
 // 1. Log the value of key "houses"
-
+for(house of got.houses) {
+  console.log(house);
+}
 // 2. Log the length of the "houses" key
+console.log(got.houses.length);
 
 // 3. Log the name of all houses in got one by one
-
+for(house of got.houses) {
+  console.log(house.name);
+}
 // 4. Log the name of all the people in house Starks (index 0) one by one
+for(person of got.houses[0].people) {
+  console.log(person.name);
+}
 
 // 5. Log the name of all the people in house Lannisters (index 1) one by one
-
+for(person of got.houses[1].people) {
+  console.log(person.name);
+}
 // 6. Log the description of all the people in house Lannisters (index 1) one by one
-
+for(person of got.houses[1].people) {
+  console.log(person.description);
+}
 // 7. Log the name and description of all the people in house Lannisters (index 1) one by one like `I am [name] and my bio is [description]`
-
+for(person of got.houses[1].people) {
+  console.log(`I am ${person.name} and my bio is ${person.description}`);
+}
 // 8. Log the name and description of all the people in house Starks (index 0) one by one like `I am [name] and my bio is [description]`
-
+for(person of got.houses[0].people) {
+  console.log(`I am ${person.name} and my bio is ${person.description}`);
+}
 // 9. Log the name and description of the people in house Starks whose name is `Robb Stark`
-
+for(person of got.houses[0].people) {
+  if(person.name === 'Robb Stark') {
+    console.log(`My name is ${person.name} and my bio is ${person.description}`);
+  }
+}
 // 10. Log the name and description of the people in house Lannisters whose name is `Tywin Lannister`
-
+for(person of got.houses[1].people) {
+  if(person.name === 'Tywin Lannister') {
+    console.log(`My name is ${person.name} and my bio is ${person.description}`);
+  }
+}
 // 11. Push the name of the houses in an array named `houseNames` and Log the array
-
+const houseNames = []
+ for(house of got.houses) {
+  houseNames.push(house.name)
+ }
+console.log(houseNames);
 // 12. Log the size of people in Starks house
-
+for(house of got.houses) {
+  if(house.name === 'Starks') {
+    console.log(house.people.length);
+  }
+}
 // 13. Log the size of people in Lannisters house
-
+for(house of got.houses) {
+  if(house.name === 'Lannisters') {
+    console.log(house.people.length);
+  }
+}
 // 14. Add the name and size of people in an object like {Starks: 4, Lannisters: 6} and log the object
-
+const newObj = {}
+for(house of got.houses) {
+  newObj[house.name] = house.people.length
+}
+console.log(newObj);
 // 15. Log the name of all the people of all the houses in got one by one
-
+for(house of got.houses) {
+  for(person of house.people) {
+    console.log(person.name);
+  }
+}
 // 16. Push all names into a new array named `allPeople` and log the value array.
-
+const allPeople = []
+for(house of got.houses) {
+  for(person of house.people) {
+    allPeople.push(person.name);
+  }
+}
+console.log(allPeople);
 // 17. Log the value and length of `allPeople` array created above
+for(name of allPeople) {
+  console.log(name)
+}
+console.log(allPeople.length);
 
 // 18. Push all descriptions into an array named `allDescription`
-
+const allDescription = []
+for(house of got.houses) {
+  for(person of house.people) {
+    allDescription.push(person.description);
+  }
+}
+console.log(allDescription);
 // 19. Log the value and length `allDescription`
-
+for(description of allDescription) {
+  console.log(description);
+}
+console.log(allDescription.length);
 // 20. Only the the description whose length is more than 30. (use .length property on string to get the length)
+for(description of allDescription) {
+  if(description.length > 30) {
+    console.log(description);
+  }
+}
