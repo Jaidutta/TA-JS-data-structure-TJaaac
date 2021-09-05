@@ -40,8 +40,9 @@ console.log(oddCollection);
 
 function times(number, character = 'test') {
   // Your code
+  if(number < 1) return []
   const arr = []
-  for(i = 0; i < number; i++) {
+  for(let i = 0; i < number; i++) {
     arr.push(character)
   }
   return arr
